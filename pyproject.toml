@@ -1,7 +1,7 @@
 [project]
 name = "logistic-and-shipment-tracking-backend"
 version = "0.1.0"
-description = ""
+description = "Shipment tracking backend: atomic scan processing in PostgreSQL, latest status in Redis, raw scan logs in MongoDB"
 authors = [
     {name = "aklileseyoum",email = "aklileseyoum294@gmail.com"}
 ]
