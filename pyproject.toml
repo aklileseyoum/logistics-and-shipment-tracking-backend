@@ -8,6 +8,9 @@ authors = [
 readme = "README.md"
 requires-python = ">=3.14"
 dependencies = [
+    "pymongo (>=4.19.0,<5.0.0)",
+    "redis (>=8.1.0,<9.0.0)",
+    "psycopg2-binary (>=2.9.13,<3.0.0)"
 ]
 
 [tool.poetry]
