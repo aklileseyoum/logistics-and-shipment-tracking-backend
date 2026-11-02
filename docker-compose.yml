@@ -1,35 +1,35 @@
 services:
   postgres:
     image: postgres:16
-    container_name: ecom_postgres
+    container_name: logi_postgres
     environment:
       POSTGRES_USER: app
       POSTGRES_PASSWORD: app_password
-      POSTGRES_DB: ecommerce
+      POSTGRES_DB: logistics
     ports:
-      - "5433:5432"
+      - "5434:5432"
     volumes:
-      - pgdata:/var/lib/postgresql/data
+      - logi_pgdata:/var/lib/postgresql/data
     healthcheck:
-      test: ["CMD-SHELL", "pg_isready -U app -d ecommerce"]
+      test: ["CMD-SHELL", "pg_isready -U app -d logistics"]
       interval: 5s
       timeout: 3s
       retries: 10
 
   redis:
     image: redis:7
-    container_name: ecom_redis
+    container_name: logi_redis
     ports:
-      - "6379:6379"
+      - "6380:6379"
 
   mongo:
     image: mongo:7
-    container_name: ecom_mongo
+    container_name: logi_mongo
     ports:
-      - "27017:27017"
+      - "27018:27017"
     volumes:
-      - mongodata:/data/db
+      - logi_mongodata:/data/db
 
 volumes:
-  pgdata:
-  mongodata:
+  logi_pgdata:
+  logi_mongodata:
